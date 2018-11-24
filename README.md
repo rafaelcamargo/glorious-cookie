@@ -57,3 +57,41 @@ gcookie.remove(key, path);
 ```
 
 **Note:** If cookies are not available, a warning will be logged when trying to set or remove a cookie.
+
+
+## Contributing
+
+1. Install [Node](https://nodejs.org/en/). Download the "Recommend for Most Users" version.
+
+2. Clone the repo:
+``` bash
+git clone git@github.com:glorious-codes/glorious-cookie.git
+```
+
+3. Go to the project directory:
+``` bash
+cd glorious-cookie
+```
+
+4. Install the project dependencies:
+``` bash
+npm install
+```
+
+5. Install the gulp globally:
+``` bash
+npm install --global gulp
+```
+
+6. Build the project:
+``` bash
+gulp start
+```
+
+## Tests
+
+Ensure that all code that you have added is covered with unit tests:
+``` bash
+npm run test
+```
+> Note: In some cases on Windows needed to `npm install natives` after `npm install`

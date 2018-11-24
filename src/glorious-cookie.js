@@ -24,6 +24,23 @@ _public.remove = function(key, path){
   _public.set(key, '', -1, path, 'remove');
 };
 
+_public.clear = function(path) {
+  if (isCookieAvailable()) {
+    var allCookies = getAllCookies();
+    var keys = Object.keys(allCookies);
+    for (var i = 0; i < keys.length; i++) {
+      _public.remove(keys[i], path);
+    }
+  }
+};
+
+_public.exist = function(key) {
+  var cookie = _public.get(key);
+  if (cookie != undefined && cookie !== null && typeof cookie !== "object")
+    return true;
+  return false;
+};
+
 function isCookieAvailable(){
   return hasCookieSupport() && isCookieEnabled();
 }

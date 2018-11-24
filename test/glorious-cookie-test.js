@@ -58,6 +58,14 @@ describe('Glorious Cookie', function(){
     expect(country).to.equal(null);
   });
 
+  it("should return true if cookie exist", function() {
+    var exist;
+
+    document.cookie = cookiesMock;
+    exist = gcookie.exist("name");
+    expect(exist).to.equal(true);
+  });
+
   it('should remove a cookie', function(){
     var name;
 
@@ -66,6 +74,15 @@ describe('Glorious Cookie', function(){
     name = gcookie.get('name');
     expect(name).to.equal(null);
   });
+
+  it("should clear all cookies", function() {
+    
+    document.cookie = cookiesMock;
+    gcookie.clear();
+    age = gcookie.get("age");
+    expect(age).to.equal(null);
+  });
+
 
   it('should log warning when trying set cookie, but cookies are not available', function(){
     var message = 'It was not possible to set a cookie with the key: name and ' +
